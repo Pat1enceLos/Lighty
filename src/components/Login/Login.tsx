@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Button, StyleSheet, TextInput, View, Alert, Dimensions, DeviceEventEmitter} from "react-native";
+import store from "../../store";
+import { addUserInfo } from "../../store/actions";
 
 const style = StyleSheet.create({
   input: {
@@ -27,6 +29,7 @@ export default class Login extends Component<{}, {phoneNumber: string, password:
       .then(response => response.json())
       .then(result => {
         if (result.code === 200) {
+          store.dispatch(addUserInfo(result));
           DeviceEventEmitter.emit('login', 'success');
         } else {
           console.warn(result.code);

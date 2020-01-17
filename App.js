@@ -7,31 +7,16 @@
  */
 
 import React, { Component } from 'react';
-import { createMaterialTopTabNavigator } from 'react-navigation';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Dimensions,
   DeviceEventEmitter,
   Button,
   Alert,
   Image,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import Router from './components/Router';
-import Login from './components/Login/Login';
+import Router from './src/components/Router';
+import Login from './src/components/Login/Login';
 
 class App extends Component {
   constructor() {
